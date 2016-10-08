@@ -29,6 +29,11 @@ float4x4 _PreviousVP;
 float4x4 _PreviousM;
 float _MotionScale;
 
+#if defined(EYEBALL)
+float4 _Eyeball_LookAt;
+float4 _Eyeball_PreviousLookAt;
+#endif
+
 struct appdata
 {
     float4 vertex : POSITION;
@@ -53,6 +58,13 @@ v2f vert(appdata v)
     float4 r1 = tex2Dlod(_RotationBuffer, uv);
     float s0 = ScaleAnimation(uv, p0.w + 0.5);
     float s1 = ScaleAnimation(uv, p1.w + 0.5);
+
+#if defined(EYEBALL)
+    float4 r0_2 = FromToRotation(float3(0, 0, 1), _Eyeball_PreviousLookAt.xyz - p0.xyz);
+    float4 r1_2 = FromToRotation(float3(0, 0, 1), _Eyeball_LookAt.xyz - p1.xyz);
+    r0 = normalize(lerp(r0, r0_2, saturate(_Eyeball_PreviousLookAt.w * (1.5 - p0.w))));
+    r1 = normalize(lerp(r1, r1_2, saturate(_Eyeball_LookAt.w * (1.5 - p1.w))));
+#endif
 
     // Apply the local transformation.
     float3 vp0 = RotateVector(v.vertex.xyz, r0) * s0 + p0.xyz;

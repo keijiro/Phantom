@@ -72,6 +72,14 @@ float4 QMult(float4 q1, float4 q2)
     return float4(ijk, q1.w * q2.w - dot(q1.xyz, q2.xyz));
 }
 
+// From-to rotation quaternion
+float4 FromToRotation(float3 v1, float3 v2)
+{
+    float3 ijk = cross(v1, v2);
+    float r = sqrt(dot(v1, v1) + dot(v2, v2)) + dot(v1, v2);
+    return normalize(float4(ijk, r));
+}
+
 // Vector rotation with a quaternion
 // http://mathworld.wolfram.com/Quaternion.html
 float3 RotateVector(float3 v, float4 r)

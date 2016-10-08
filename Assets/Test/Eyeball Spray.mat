@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Eyeball Spray
-  m_Shader: {fileID: 4800000, guid: b100b14e682fd1643af3bcb3b08fd247, type: 3}
+  m_Shader: {fileID: 4800000, guid: 6025aaea313cdf343a41f7934790d0ba, type: 3}
   m_ShaderKeywords: _ALBEDOMAP _COLORMODE_RANDOM _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1

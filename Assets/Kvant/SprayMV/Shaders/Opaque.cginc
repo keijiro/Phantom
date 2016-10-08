@@ -37,6 +37,10 @@ half _OcclusionStrength;
 
 half _Emission;
 
+#if defined(EYEBALL)
+float4 _Eyeball_LookAt;
+#endif
+
 struct Input
 {
     float2 uv_MainTex;
@@ -52,6 +56,11 @@ void vert(inout appdata_full v)
 
     float l = p.w + 0.5;
     float s = ScaleAnimation(uv, l);
+
+#if defined(EYEBALL)
+    float4 r2 = FromToRotation(float3(0, 0, 1), _Eyeball_LookAt.xyz - p.xyz);
+    r = normalize(lerp(r, r2, saturate(_Eyeball_LookAt.w * (2 - l))));
+#endif
 
     v.vertex.xyz = RotateVector(v.vertex.xyz, r) * s + p.xyz;
     v.normal = RotateVector(v.normal, r);
