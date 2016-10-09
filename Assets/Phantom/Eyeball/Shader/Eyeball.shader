@@ -1,4 +1,4 @@
-Shader "Eyeball/Deformer"
+Shader "Phantom/Eyeball"
 {
     Properties
     {
@@ -40,7 +40,7 @@ Shader "Eyeball/Deformer"
         CGPROGRAM
         #pragma surface surf Standard nolightmap vertex:vert
         #pragma target 3.0
-        #include "Deformer.cginc"
+        #include "Eyeball.cginc"
         ENDCG
 
         Cull Front
@@ -49,7 +49,7 @@ Shader "Eyeball/Deformer"
         #pragma surface surf Standard nolightmap vertex:vert
         #pragma target 3.0
         #define BACKFACE 1
-        #include "Deformer.cginc"
+        #include "Eyeball.cginc"
         ENDCG
     }
     FallBack "Diffuse"
