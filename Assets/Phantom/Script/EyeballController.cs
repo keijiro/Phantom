@@ -9,7 +9,7 @@ public class EyeballController : MonoBehaviour
         set { _behold = value; }
     }
 
-    [SerializeField] Transform _target;
+    [SerializeField] Transform _motionTarget;
 
     Vector4 _prevLookAt;
 
@@ -17,10 +17,10 @@ public class EyeballController : MonoBehaviour
     {
         var lookAt = Camera.main.transform.position;
 
-        transform.position = _target.position;
+        transform.position = _motionTarget.position;
         transform.rotation = Quaternion.Slerp(
-            _target.rotation,
-            Quaternion.FromToRotation(Vector3.forward, lookAt - _target.position),
+            _motionTarget.rotation,
+            Quaternion.FromToRotation(Vector3.forward, lookAt - _motionTarget.position),
             _behold
         );
 
