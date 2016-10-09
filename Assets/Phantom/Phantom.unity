@@ -118,7 +118,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 34
+  m_RootOrder: 32
 --- !u!114 &136031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48176ff3d33154fd6956c5fe401b5301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 764, y: 989}
+  _wiringNodePosition: {x: 912, y: 881}
   _keyCode: 102
   _offValue: 0
   _onValue: 1
@@ -333,7 +333,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 19
+  m_RootOrder: 17
 --- !u!114 &11442386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,17 +370,6 @@ MonoBehaviour:
   _outputEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2032871331}
-        m_MethodName: set_input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1865112135}
         m_MethodName: set_input
         m_Mode: 0
@@ -405,6 +394,49 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Klak.Wiring.NodeBase+FloatEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &16484747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 16484748}
+  - 114: {fileID: 16484749}
+  m_Layer: 0
+  m_Name: Color Out
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &16484748
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16484747}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1219967673}
+  m_RootOrder: 20
+--- !u!114 &16484749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16484747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74674d1592068f94aba72f5af393792c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 728, y: 1197}
+  _target: {fileID: 1991622051}
+  _propertyName: color
 --- !u!1 &19811515
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +607,81 @@ MonoBehaviour:
   _wiringNodePosition: {x: 629, y: 589}
   _targetComponent: {fileID: 1319935753}
   _targetGameObject: {fileID: 0}
+--- !u!1 &41119930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 41119931}
+  - 114: {fileID: 41119932}
+  m_Layer: 0
+  m_Name: Float Animation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &41119931
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41119930}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1219967673}
+  m_RootOrder: 16
+--- !u!114 &41119932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 41119930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a647f6ec529dd4ca5250ab558ad64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 135, y: 1106}
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 0
+  _speed: 0.26
+  _playOnStart: 1
+  _floatEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1587027253}
+        m_MethodName: set_hue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Klak.Wiring.NodeBase+FloatEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &42213014
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +784,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 29
+  m_RootOrder: 27
 --- !u!114 &45627006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1119,6 +1226,65 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Klak.Wiring.NodeBase+VoidEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!1 &69701521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 69701522}
+  - 114: {fileID: 69701523}
+  m_Layer: 0
+  m_Name: Hue To Color
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &69701522
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 69701521}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1219967673}
+  m_RootOrder: 18
+--- !u!114 &69701523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 69701521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce3ff28903fb54b9f0d502781176f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 440, y: 1337}
+  _saturation: 0.8
+  _brightness: 1
+  _colorEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 981135116}
+        m_MethodName: set_input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Klak.Wiring.NodeBase+ColorEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &72484218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1684,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!114 &116558832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1530,7 +1696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1668dc4c6df420149990c729e1ad81de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 760, y: 923}
+  _wiringNodePosition: {x: 905, y: 794}
   _bangEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1635,7 +1801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &122237138
 Transform:
   m_ObjectHideFlags: 0
@@ -3314,7 +3480,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!114 &228428427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3516,7 +3682,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!1 &251756574
 GameObject:
   m_ObjectHideFlags: 0
@@ -5767,12 +5933,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef48ed7cecef994b9fe9847deba775f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 830, y: 1305}
+  _wiringNodePosition: {x: 831, y: 1305}
   _event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Snap
+      - m_Target: {fileID: 487378223}
+        m_MethodName: Rehash
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5807,7 +5973,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &416924570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5836,7 +6002,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 24
+  m_RootOrder: 22
 --- !u!114 &416924572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6245,17 +6411,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1966622849}
-        m_MethodName: Rehash
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1557420580}
         m_MethodName: Rehash
         m_Mode: 1
@@ -6281,7 +6436,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &453962571
 GameObject:
   m_ObjectHideFlags: 0
@@ -6734,7 +6889,7 @@ GameObject:
   - 4: {fileID: 487378222}
   - 114: {fileID: 487378223}
   m_Layer: 0
-  m_Name: Yaw motion
+  m_Name: Rotation motion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6751,7 +6906,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1288041818}
+  - {fileID: 1937323061}
   m_Father: {fileID: 815315490}
   m_RootOrder: 0
 --- !u!114 &487378223
@@ -6768,11 +6923,11 @@ MonoBehaviour:
   _enablePositionNoise: 0
   _enableRotationNoise: 1
   _positionFrequency: 0.2
-  _rotationFrequency: 0.14
+  _rotationFrequency: 0.04
   _positionAmplitude: 0.5
   _rotationAmplitude: 1
   _positionScale: {x: 1, y: 1, z: 1}
-  _rotationScale: {x: 0, y: 100, z: 0}
+  _rotationScale: {x: 90, y: 90, z: 90}
   _positionFractalLevel: 3
   _rotationFractalLevel: 2
 --- !u!1 &489178906
@@ -7298,23 +7453,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10593b7d510b64560a297a8af1356dcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colorTemp: -0.08
-  _colorTint: -0.23
+  _colorTemp: 0.14
+  _colorTint: -0.13
   _toneMapping: 0
-  _exposure: 1.19
-  _saturation: 1.15
+  _exposure: 1
+  _saturation: 1.2
   _rCurve:
     serializedVersion: 2
     m_Curve:
     - time: 0
       value: 0
-      inSlope: 0.60924375
-      outSlope: 0.60924375
+      inSlope: 0.88783246
+      outSlope: 0.88783246
       tangentMode: 0
     - time: 1
       value: 1
-      inSlope: 0.6839622
-      outSlope: 0.6839622
+      inSlope: 0.88422483
+      outSlope: 0.88422483
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -7324,13 +7479,13 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: 0
-      inSlope: 0.8238637
-      outSlope: 0.8238637
+      inSlope: 1.1951591
+      outSlope: 1.1951591
       tangentMode: 0
     - time: 1
       value: 1
-      inSlope: 0.83227056
-      outSlope: 0.83227056
+      inSlope: 1.1925403
+      outSlope: 1.1925403
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -7340,13 +7495,13 @@ MonoBehaviour:
     m_Curve:
     - time: 0
       value: 0
-      inSlope: 1.4564732
-      outSlope: 1.4564732
+      inSlope: 1.1652801
+      outSlope: 1.1652801
       tangentMode: 0
     - time: 1
       value: 1
-      inSlope: 1.4384911
-      outSlope: 1.4384911
+      inSlope: 1.1714475
+      outSlope: 1.1714475
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -7354,20 +7509,20 @@ MonoBehaviour:
   _cCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
+    - time: 0.015363129
+      value: -0.0072332723
+      inSlope: 0.92071515
+      outSlope: 0.92071515
       tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
+    - time: 0.91201115
+      value: 1.0216998
+      inSlope: 1.1059393
+      outSlope: 1.1059393
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
-  _ditherMode: 0
+    m_RotationOrder: 0
+  _ditherMode: 1
   shader: {fileID: 4800000, guid: dc9775b65c52747e69fc4c854c00d696, type: 3}
 --- !u!114 &553037312
 MonoBehaviour:
@@ -7427,7 +7582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shutterAngle: 360
-  _sampleCount: 6
+  _sampleCount: 8
   _frameBlending: 0
   _reconstructionShader: {fileID: 4800000, guid: 60701d53f4c638048b5e49c197d08b77,
     type: 3}
@@ -8246,7 +8401,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 33
+  m_RootOrder: 31
 --- !u!114 &590473445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8889,7 +9044,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!114 &606519230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9857,49 +10012,6 @@ RectTransform:
   m_AnchoredPosition: {x: 540, y: 480}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &669161155
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 669161156}
-  - 114: {fileID: 669161157}
-  m_Layer: 0
-  m_Name: Pitch-Bank Motion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &669161156
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 669161155}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1768688444}
-  m_RootOrder: 3
---- !u!114 &669161157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 669161155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 918, y: 84}
-  _target: {fileID: 1966622849}
-  _propertyName: rotationAmplitude
 --- !u!1 &674057358
 GameObject:
   m_ObjectHideFlags: 0
@@ -11702,13 +11814,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enablePositionNoise: 1
   _enableRotationNoise: 1
-  _positionFrequency: 0.2
-  _rotationFrequency: 0.2
-  _positionAmplitude: 0.4
+  _positionFrequency: 0.25
+  _rotationFrequency: 0.3
+  _positionAmplitude: 0.6
   _rotationAmplitude: 120
   _positionScale: {x: 1, y: 1, z: 1}
   _rotationScale: {x: 1, y: 1, z: 1}
-  _positionFractalLevel: 2
+  _positionFractalLevel: 3
   _rotationFractalLevel: 3
 --- !u!1 &804939683
 GameObject:
@@ -12000,7 +12112,7 @@ GameObject:
   - 4: {fileID: 815315490}
   - 114: {fileID: 815315491}
   m_Layer: 0
-  m_Name: Yaw random
+  m_Name: Rotation random
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12032,7 +12144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _positionRange: {x: 0, y: 0, z: 0}
-  _rotationRange: {x: 0, y: 90, z: 0}
+  _rotationRange: {x: 90, y: 90, z: 90}
   _amplitude: 1
 --- !u!1 &819551158
 GameObject:
@@ -12356,7 +12468,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 21
+  m_RootOrder: 19
 --- !u!114 &841596884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13161,7 +13273,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 27
+  m_RootOrder: 25
 --- !u!114 &891179610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14476,6 +14588,49 @@ MonoBehaviour:
   _wiringNodePosition: {x: 1984, y: 202}
   _targetComponent: {fileID: 553037326}
   _targetGameObject: {fileID: 0}
+--- !u!1 &981135114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 981135115}
+  - 114: {fileID: 981135116}
+  m_Layer: 0
+  m_Name: Color Out
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &981135115
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 981135114}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1219967673}
+  m_RootOrder: 19
+--- !u!114 &981135116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 981135114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74674d1592068f94aba72f5af393792c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 734, y: 1356}
+  _target: {fileID: 1830462986}
+  _propertyName: color
 --- !u!1 &985344323
 GameObject:
   m_ObjectHideFlags: 0
@@ -14884,7 +15039,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 25
+  m_RootOrder: 23
 --- !u!114 &1011418095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17590,6 +17745,12 @@ Transform:
   - {fileID: 737079503}
   - {fileID: 489178907}
   - {fileID: 1976183488}
+  - {fileID: 1864158530}
+  - {fileID: 41119931}
+  - {fileID: 1587027252}
+  - {fileID: 69701522}
+  - {fileID: 981135115}
+  - {fileID: 16484748}
   m_Father: {fileID: 1683323795}
   m_RootOrder: 3
 --- !u!114 &1219967674
@@ -17603,7 +17764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e5da7555040604f9438130103bdee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringSelected: 0
+  _wiringSelected: 1
 --- !u!1 &1229827228
 GameObject:
   m_ObjectHideFlags: 0
@@ -18341,50 +18502,6 @@ Transform:
   - {fileID: 1907514591}
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!1 &1288041817
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1288041818}
-  - 114: {fileID: 1288041819}
-  m_Layer: 0
-  m_Name: Pitch-Bank random
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1288041818
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1288041817}
-  m_LocalRotation: {x: 0.026176924, y: 0, z: 0, w: 0.99965733}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 3, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1966622848}
-  m_Father: {fileID: 487378222}
-  m_RootOrder: 0
---- !u!114 &1288041819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1288041817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b6e546f6672e74f87c2420bb24f146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _positionRange: {x: 0, y: 0, z: 0}
-  _rotationRange: {x: 7, y: 0, z: 40}
-  _amplitude: 1
 --- !u!1 &1289660315
 GameObject:
   m_ObjectHideFlags: 0
@@ -19932,7 +20049,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 20
+  m_RootOrder: 18
 --- !u!114 &1383475536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20658,7 +20775,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!114 &1439070222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20736,7 +20853,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 31
+  m_RootOrder: 29
 --- !u!114 &1440175640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20832,7 +20949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 1186, y: 176}
+  _wiringNodePosition: {x: 1247, y: 176}
   _target: {fileID: 1557420580}
   _propertyName: positionAmplitude
 --- !u!1 &1444668555
@@ -20992,7 +21109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef48ed7cecef994b9fe9847deba775f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 566, y: 825}
+  _wiringNodePosition: {x: 557, y: 828}
   _event:
     m_PersistentCalls:
       m_Calls:
@@ -21004,17 +21121,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.1
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1288041819}
-        m_MethodName: RandomizeWithMinimumDifference
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.5
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -21043,7 +21149,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1455741031
 GameObject:
   m_ObjectHideFlags: 0
@@ -22003,17 +22109,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 669161157}
-        m_MethodName: set_input
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11442386}
         m_MethodName: set_input
         m_Mode: 0
@@ -22433,7 +22528,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 32
+  m_RootOrder: 30
 --- !u!114 &1532647064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23142,11 +23237,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enablePositionNoise: 1
   _enableRotationNoise: 0
-  _positionFrequency: 0.15
+  _positionFrequency: 0.1
   _rotationFrequency: 0.14
   _positionAmplitude: 1
   _rotationAmplitude: 3
-  _positionScale: {x: 0, y: 0, z: 4}
+  _positionScale: {x: 0, y: 0, z: 6}
   _rotationScale: {x: 0, y: 0, z: 1}
   _positionFractalLevel: 2
   _rotationFractalLevel: 2
@@ -23569,6 +23664,65 @@ MonoBehaviour:
   _wiringNodePosition: {x: 623, y: 199}
   _targetComponent: {fileID: 207772709}
   _targetGameObject: {fileID: 0}
+--- !u!1 &1587027251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1587027252}
+  - 114: {fileID: 1587027253}
+  m_Layer: 0
+  m_Name: Hue To Color
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1587027252
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1587027251}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1219967673}
+  m_RootOrder: 17
+--- !u!114 &1587027253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1587027251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ce3ff28903fb54b9f0d502781176f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 440, y: 1178}
+  _saturation: 0.8
+  _brightness: 1
+  _colorEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 16484749}
+        m_MethodName: set_input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Klak.Wiring.NodeBase+ColorEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1592489326
 GameObject:
   m_ObjectHideFlags: 0
@@ -23647,7 +23801,7 @@ GameObject:
   - 4: {fileID: 1592949606}
   - 114: {fileID: 1592949607}
   m_Layer: 0
-  m_Name: Yaw Motion
+  m_Name: Rotation Motion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23677,7 +23831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 918, y: 23}
+  _wiringNodePosition: {x: 922, y: 70}
   _target: {fileID: 487378223}
   _propertyName: rotationAmplitude
 --- !u!1 &1593721123
@@ -24248,7 +24402,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 23
+  m_RootOrder: 21
 --- !u!114 &1603456589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24393,7 +24547,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1614517276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8}
+  m_LocalPosition: {x: 0, y: 0, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -24821,7 +24975,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 28
+  m_RootOrder: 26
 --- !u!114 &1625852831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26848,7 +27002,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!114 &1716976729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26865,17 +27019,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815315491}
-        m_MethodName: Randomize
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1288041819}
         m_MethodName: Randomize
         m_Mode: 1
         m_Arguments:
@@ -27405,7 +27548,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 30
+  m_RootOrder: 28
 --- !u!114 &1742053406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27417,7 +27560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b6980d93df82e24c9c18ac327c41a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 1256, y: 364}
+  _wiringNodePosition: {x: 1248, y: 379}
   _modulationType: 3
   _outputEvent:
     m_PersistentCalls:
@@ -27629,7 +27772,6 @@ Transform:
   - {fileID: 1510722104}
   - {fileID: 1592949606}
   - {fileID: 1442755739}
-  - {fileID: 669161156}
   - {fileID: 1446805734}
   - {fileID: 446107323}
   - {fileID: 412695159}
@@ -27643,7 +27785,6 @@ Transform:
   - {fileID: 228428426}
   - {fileID: 1925927947}
   - {fileID: 1865112134}
-  - {fileID: 2032871330}
   - {fileID: 1944763041}
   - {fileID: 11442385}
   - {fileID: 1383475535}
@@ -27674,7 +27815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e5da7555040604f9438130103bdee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringSelected: 1
+  _wiringSelected: 0
 --- !u!1 &1773390874
 GameObject:
   m_ObjectHideFlags: 0
@@ -28181,16 +28322,16 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1803350647}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 543ddbe12367a4899b011d43ef41f357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enablePositionNoise: 1
   _enableRotationNoise: 1
-  _positionFrequency: 0.4
-  _rotationFrequency: 0.5
-  _positionAmplitude: 0.1
+  _positionFrequency: 0.2
+  _rotationFrequency: 0.2
+  _positionAmplitude: 0.2
   _rotationAmplitude: 0.5
   _positionScale: {x: 1, y: 1, z: 1}
   _rotationScale: {x: 1, y: 1, z: 1}
@@ -28680,7 +28821,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1830462984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalPosition: {x: 0, y: 0, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -29358,6 +29499,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 384, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1864158529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1864158530}
+  - 114: {fileID: 1864158531}
+  m_Layer: 0
+  m_Name: Float Animation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1864158530
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1864158529}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1219967673}
+  m_RootOrder: 15
+--- !u!114 &1864158531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1864158529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a647f6ec529dd4ca5250ab558ad64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 133, y: 1267}
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 0
+  _speed: 0.3
+  _playOnStart: 1
+  _floatEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 69701523}
+        m_MethodName: set_hue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Klak.Wiring.NodeBase+FloatEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1864999854
 GameObject:
   m_ObjectHideFlags: 0
@@ -29411,7 +29627,7 @@ GameObject:
   - 4: {fileID: 1865112134}
   - 114: {fileID: 1865112135}
   m_Layer: 0
-  m_Name: Yaw Random
+  m_Name: Rotation Random
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29429,7 +29645,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 16
+  m_RootOrder: 15
 --- !u!114 &1865112135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29441,7 +29657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 1253, y: 244}
+  _wiringNodePosition: {x: 1247, y: 262}
   _target: {fileID: 815315491}
   _propertyName: amplitude
 --- !u!1 &1872188084
@@ -29869,7 +30085,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 22
+  m_RootOrder: 20
 --- !u!114 &1912360481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29885,8 +30101,8 @@ MonoBehaviour:
   _event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: Snap
+      - m_Target: {fileID: 487378223}
+        m_MethodName: Rehash
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30187,7 +30403,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 15
+  m_RootOrder: 14
 --- !u!114 &1925927948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30199,22 +30415,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef48ed7cecef994b9fe9847deba775f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 1049, y: 954}
+  _wiringNodePosition: {x: 1259, y: 836}
   _event:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 815315491}
-        m_MethodName: Clear
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1288041819}
         m_MethodName: Clear
         m_Mode: 1
         m_Arguments:
@@ -30382,13 +30587,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1937323060}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1557420579}
-  m_Father: {fileID: 1966622848}
+  m_Father: {fileID: 487378222}
   m_RootOrder: 0
 --- !u!114 &1937323062
 MonoBehaviour:
@@ -30432,7 +30637,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 18
+  m_RootOrder: 16
 --- !u!114 &1944763042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30444,7 +30649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 1532, y: 403}
+  _wiringNodePosition: {x: 1547, y: 414}
   _target: {fileID: 1937323062}
   _propertyName: amplitude
 --- !u!1 &1948836668
@@ -30797,7 +31002,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!114 &1964722786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30848,57 +31053,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Klak.Wiring.NodeBase+VoidEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &1966622847
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1966622848}
-  - 114: {fileID: 1966622849}
-  m_Layer: 0
-  m_Name: Pitch-Bank motion
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1966622848
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966622847}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1937323061}
-  m_Father: {fileID: 1288041818}
-  m_RootOrder: 0
---- !u!114 &1966622849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966622847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 543ddbe12367a4899b011d43ef41f357, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enablePositionNoise: 0
-  _enableRotationNoise: 1
-  _positionFrequency: 0.2
-  _rotationFrequency: 0.18
-  _positionAmplitude: 0.5
-  _rotationAmplitude: 1
-  _positionScale: {x: 1, y: 1, z: 1}
-  _rotationScale: {x: 10, y: 0, z: 30}
-  _positionFractalLevel: 3
-  _rotationFractalLevel: 2
 --- !u!1 &1968660576
 GameObject:
   m_ObjectHideFlags: 0
@@ -31425,7 +31579,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1991622049}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4}
+  m_LocalPosition: {x: 0, y: 0, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -31750,7 +31904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2024864829
 Transform:
   m_ObjectHideFlags: 0
@@ -31897,49 +32051,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -48, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &2032871329
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2032871330}
-  - 114: {fileID: 2032871331}
-  m_Layer: 0
-  m_Name: Pitch-Bank Random
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2032871330
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2032871329}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1768688444}
-  m_RootOrder: 17
---- !u!114 &2032871331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2032871329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 1253, y: 305}
-  _target: {fileID: 1288041819}
-  _propertyName: amplitude
 --- !u!1 &2041445254
 GameObject:
   m_ObjectHideFlags: 0
@@ -32047,7 +32158,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!114 &2044434443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32701,12 +32812,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _emitterCenter: {x: 0, y: 2, z: 0}
+  _emitterCenter: {x: 0, y: 0, z: 4}
   _emitterSize: {x: 20, y: 10, z: 20}
-  _throttle: 1
+  _throttle: 0.9999999
   _life: 4
   _lifeRandomness: 0.6
-  _initialVelocity: {x: 0, y: 0, z: 2}
+  _initialVelocity: {x: 0, y: 0, z: -4}
   _directionSpread: 0.04
   _speedRandomness: 0.5
   _acceleration: {x: 0, y: 0, z: 0}
@@ -32942,7 +33053,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1768688444}
-  m_RootOrder: 26
+  m_RootOrder: 24
 --- !u!1 &2144029603
 GameObject:
   m_ObjectHideFlags: 0
