@@ -267,7 +267,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &125407999
 MeshFilter:
   m_ObjectHideFlags: 8
@@ -431,7 +431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &389551181
 MeshFilter:
   m_ObjectHideFlags: 8
@@ -529,7 +529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &421154274
 MeshFilter:
   m_ObjectHideFlags: 8
@@ -677,7 +677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &526236539
 Transform:
   m_ObjectHideFlags: 0
@@ -753,7 +753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &782023124
 MeshFilter:
   m_ObjectHideFlags: 8
@@ -899,6 +899,7 @@ GameObject:
   - 124: {fileID: 919358325}
   - 81: {fileID: 919358324}
   - 45: {fileID: 919358329}
+  - 114: {fileID: 919358340}
   - 114: {fileID: 919358337}
   - 114: {fileID: 919358336}
   - 114: {fileID: 919358330}
@@ -1232,6 +1233,30 @@ MonoBehaviour:
   _motionVectorsAmplitude: 50
   _motionVectorsResolution: 16
   _shader: {fileID: 4800000, guid: f104e85b3463c2748a02d2f07582fa63, type: 3}
+--- !u!114 &919358340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 919358323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc298c9faffc5be4f872330858bc5baf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _axis: {x: 0, y: 0, z: 1}
+  _exponent: 23.2
+  _fallOff: 50
+  _color1: {r: 2.2058823, g: 0.4541523, b: 0.4541523, a: 1}
+  _interval1: 0.5
+  _speed1: 1
+  _color2: {r: 0.5722319, g: 2.1617646, b: 0.5722319, a: 1}
+  _interval2: 0.7
+  _speed2: 1.1
+  _color3: {r: 0.44214973, g: 0.44214973, b: 2.0735295, a: 1}
+  _interval3: 0.6
+  _speed3: 1.18
+  _shader: {fileID: 4800000, guid: 12b32ab21eb047042b0346ab40bcbfc2, type: 3}
 --- !u!1 &935877225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &935877226
 MeshFilter:
   m_ObjectHideFlags: 8
@@ -1457,7 +1482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &1722145832
 MeshFilter:
   m_ObjectHideFlags: 8
