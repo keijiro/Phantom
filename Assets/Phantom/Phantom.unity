@@ -1080,15 +1080,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1dde4d007483a4ca907d6c7d71e00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 55, y: 531}
+  _wiringNodePosition: {x: 32, y: 669}
   _floatValue: 0.5
   _interpolator:
     _interpolationType: 2
-    _interpolationSpeed: 30
+    _interpolationSpeed: 25
   _valueEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 208329871}
+        m_MethodName: set_input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1027133042}
+        m_MethodName: set_input
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1030169287}
         m_MethodName: set_input
         m_Mode: 0
         m_Arguments:
@@ -1131,8 +1153,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 55432682}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.25, y: 0}
-  m_AnchorMax: {x: 0.25, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 48, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2440,7 +2462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1dde4d007483a4ca907d6c7d71e00f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 72, y: 676}
+  _wiringNodePosition: {x: 59, y: 1026}
   _floatValue: 0
   _interpolator:
     _interpolationType: 2
@@ -3249,20 +3271,20 @@ MonoBehaviour:
       value: 0
       inSlope: 0
       outSlope: 1
-      tangentMode: 0
+      tangentMode: 21
     - time: 1
       value: 1
       inSlope: 1
       outSlope: 0
-      tangentMode: 0
+      tangentMode: 21
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   _interpolator:
     _interpolationType: 0
-    _interpolationSpeed: 10
-  _amplitude: 3.2
-  _bias: 0.4
+    _interpolationSpeed: 50
+  _amplitude: 4.7
+  _bias: 0.3
   _outputEvent:
     m_PersistentCalls:
       m_Calls:
@@ -4742,7 +4764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f12cb6e816d52340928f63f1b02f1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 385, y: 671}
+  _wiringNodePosition: {x: 373, y: 1009}
   _responseCurve:
     serializedVersion: 2
     m_Curve:
@@ -5571,7 +5593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &380854574
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6702,7 +6724,7 @@ RectTransform:
   m_Father: {fileID: 2031334755}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 48, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8229,7 +8251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wiringNodePosition: {x: 687, y: 525}
-  _target: {fileID: 0}
+  _target: {fileID: 2059617038}
   _propertyName: length
 --- !u!1 &582271903
 GameObject:
@@ -9580,8 +9602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aef7aa229e49c948894b8e81f4501f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 674, y: 74}
-  _target: {fileID: 0}
+  _wiringNodePosition: {x: 675, y: 74}
+  _target: {fileID: 2059617039}
   _propertyName: _BaseRandom
 --- !u!1 &654440181
 GameObject:
@@ -10633,7 +10655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wiringNodePosition: {x: 696, y: 377}
-  _target: {fileID: 0}
+  _target: {fileID: 2059617039}
   _propertyName: _GlowProb
 --- !u!1 &721131128
 GameObject:
@@ -15419,6 +15441,103 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1026497436}
+--- !u!1 &1027133040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1027133041}
+  - 114: {fileID: 1027133042}
+  m_Layer: 0
+  m_Name: Threshold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1027133041
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027133040}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1602435662}
+  m_RootOrder: 13
+--- !u!114 &1027133042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027133040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e02d4ac2ec87d643a32c5b25174f509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 365, y: 807}
+  _threshold: 0.01
+  _delayToOff: 0.5
+  _onEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1046206620}
+        m_MethodName: Enable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1454351235}
+        m_MethodName: Enable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Klak.Wiring.NodeBase+VoidEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _offEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1046206620}
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1454351235}
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Klak.Wiring.NodeBase+VoidEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1027614956
 GameObject:
   m_ObjectHideFlags: 0
@@ -15566,6 +15685,89 @@ MonoBehaviour:
   _wiringNodePosition: {x: 718, y: 876}
   _target: {fileID: 1830462986}
   _propertyName: intensity
+--- !u!1 &1030169285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1030169286}
+  - 114: {fileID: 1030169287}
+  m_Layer: 0
+  m_Name: Float Filter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1030169286
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1030169285}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1602435662}
+  m_RootOrder: 16
+--- !u!114 &1030169287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1030169285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f12cb6e816d52340928f63f1b02f1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 366, y: 665}
+  _responseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 8.487843
+      outSlope: 8.487843
+      tangentMode: 0
+    - time: 0.19999999
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 21
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  _interpolator:
+    _interpolationType: 0
+    _interpolationSpeed: 10
+  _amplitude: 1
+  _bias: 0
+  _outputEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1602654294}
+        m_MethodName: set_uniformScale
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Klak.Wiring.NodeBase+FloatEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1034571368
 GameObject:
   m_ObjectHideFlags: 0
@@ -15866,6 +16068,49 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 60}
   m_SizeDelta: {x: 384, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1046206618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1046206619}
+  - 114: {fileID: 1046206620}
+  m_Layer: 0
+  m_Name: Active Status Out
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1046206619
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046206618}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1602435662}
+  m_RootOrder: 14
+--- !u!114 &1046206620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1046206618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64dd8887208f8424e9be10f9fffd0adf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 691, y: 789}
+  _targetComponent: {fileID: 2059617039}
+  _targetGameObject: {fileID: 0}
 --- !u!1 &1050968991
 GameObject:
   m_ObjectHideFlags: 0
@@ -17764,7 +18009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e5da7555040604f9438130103bdee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringSelected: 1
+  _wiringSelected: 0
 --- !u!1 &1229827228
 GameObject:
   m_ObjectHideFlags: 0
@@ -21150,6 +21395,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1768688444}
   m_RootOrder: 3
+--- !u!1 &1454351233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1454351234}
+  - 114: {fileID: 1454351235}
+  m_Layer: 0
+  m_Name: Active Status Out
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1454351234
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1454351233}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1602435662}
+  m_RootOrder: 15
+--- !u!114 &1454351235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1454351233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64dd8887208f8424e9be10f9fffd0adf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 689, y: 885}
+  _targetComponent: {fileID: 2059617038}
+  _targetGameObject: {fileID: 0}
 --- !u!1 &1455741031
 GameObject:
   m_ObjectHideFlags: 0
@@ -21275,8 +21563,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1392279609}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 48, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -23496,8 +23784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aef7aa229e49c948894b8e81f4501f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 696, y: 203}
-  _target: {fileID: 0}
+  _wiringNodePosition: {x: 674, y: 187}
+  _target: {fileID: 2059617039}
   _propertyName: _GlowRandom
 --- !u!1 &1578841113
 GameObject:
@@ -24335,7 +24623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1602435662
 Transform:
   m_ObjectHideFlags: 0
@@ -24360,6 +24648,11 @@ Transform:
   - {fileID: 187297498}
   - {fileID: 317598424}
   - {fileID: 1737341459}
+  - {fileID: 1027133041}
+  - {fileID: 1046206619}
+  - {fileID: 1454351234}
+  - {fileID: 1030169286}
+  - {fileID: 1602654293}
   m_Father: {fileID: 1683323795}
   m_RootOrder: 2
 --- !u!114 &1602435663
@@ -24373,7 +24666,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e5da7555040604f9438130103bdee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringSelected: 0
+  _wiringSelected: 1
+--- !u!1 &1602654292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1602654293}
+  - 114: {fileID: 1602654294}
+  m_Layer: 0
+  m_Name: Transform Out
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1602654293
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1602654292}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1602435662}
+  m_RootOrder: 17
+--- !u!114 &1602654294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1602654292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aca5806d89554ea1754d3f877fd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wiringNodePosition: {x: 687, y: 649}
+  _targetTransform: {fileID: 2059617036}
+  _addToOriginal: 0
 --- !u!1 &1603456587
 GameObject:
   m_ObjectHideFlags: 0
@@ -24762,7 +25098,7 @@ RectTransform:
   m_Father: {fileID: 1306600735}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 48, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -27449,8 +27785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a319229719231eb42a0f578b8f339e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringNodePosition: {x: 687, y: 699}
-  _target: {fileID: 0}
+  _wiringNodePosition: {x: 676, y: 1023}
+  _target: {fileID: 2059617038}
   _propertyName: noiseAmplitude
 --- !u!1 &1740830549
 GameObject:
@@ -32289,11 +32625,11 @@ MonoBehaviour:
   _randomSeed: 0
   _length: 3
   _lengthRandomness: 0.3
-  _spring: 800
-  _damping: 30
-  _gravity: {x: 0, y: -8, z: 2}
-  _noiseAmplitude: 5
-  _noiseFrequency: 1
+  _spring: 300
+  _damping: 20
+  _gravity: {x: 0, y: 0, z: 0}
+  _noiseAmplitude: 2
+  _noiseFrequency: 0.7
   _noiseSpeed: 0.1
   _kernels: {fileID: 4800000, guid: c91a1514fa253694b9c31e72a147c2e6, type: 3}
 --- !u!23 &2059617039
