@@ -76,7 +76,7 @@ float4 QMult(float4 q1, float4 q2)
 float4 FromToRotation(float3 v1, float3 v2)
 {
     float3 ijk = cross(v1, v2);
-    float r = sqrt(dot(v1, v1) + dot(v2, v2)) + dot(v1, v2);
+    float r = sqrt(dot(v1, v1) * dot(v2, v2)) + dot(v1, v2);
     return normalize(float4(ijk, r));
 }
 
