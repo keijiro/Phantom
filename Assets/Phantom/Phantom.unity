@@ -717,7 +717,7 @@ MonoBehaviour:
   _rotationFrequency: 0.2
   _positionAmplitude: 1
   _rotationAmplitude: 10
-  _positionScale: {x: 2, y: 1, z: 2}
+  _positionScale: {x: 3, y: 3, z: 3}
   _rotationScale: {x: 1, y: 1, z: 0}
   _positionFractalLevel: 1
   _rotationFractalLevel: 3
@@ -3664,12 +3664,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _emitterCenter: {x: 0, y: 2.5, z: 0}
+  _emitterCenter: {x: 0, y: 0, z: 4}
   _emitterSize: {x: 20, y: 10, z: 20}
   _throttle: 0.99999994
   _life: 4
   _lifeRandomness: 0.6
-  _initialVelocity: {x: 0, y: 0, z: 3}
+  _initialVelocity: {x: 0, y: 0, z: -3}
   _directionSpread: 0
   _speedRandomness: 0.6
   _acceleration: {x: 0, y: 0, z: 0}
@@ -3677,6 +3677,7 @@ MonoBehaviour:
   _spin: 120
   _speedToSpin: 300
   _spinRandomness: 0.3
+  _limitRotationAxis: 0
   _noiseAmplitude: 0.2
   _noiseFrequency: 0.2
   _noiseMotion: 1
@@ -6198,7 +6199,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 649608556}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!114 &364429498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11348,7 +11349,6 @@ Transform:
   - {fileID: 2059617036}
   - {fileID: 2024864829}
   - {fileID: 122237138}
-  - {fileID: 1913451522}
   - {fileID: 364429497}
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -12724,6 +12724,7 @@ MonoBehaviour:
   _spin: 200
   _speedToSpin: 400
   _spinRandomness: 0.3
+  _limitRotationAxis: 0
   _noiseAmplitude: 0.5
   _noiseFrequency: 0.2
   _noiseMotion: 1
@@ -13609,19 +13610,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _emitterCenter: {x: 0, y: 1, z: 2.5}
-  _emitterSize: {x: 9, y: 2, z: 2.5}
-  _throttle: 1
+  _emitterCenter: {x: 0, y: 0, z: 10}
+  _emitterSize: {x: 15, y: 15, z: 15}
+  _throttle: 0.9999999
   _life: 4
-  _lifeRandomness: 0.2
+  _lifeRandomness: 0.5
   _initialVelocity: {x: 0, y: 0.2, z: 0}
   _directionSpread: 1
   _speedRandomness: 0.5
-  _acceleration: {x: 0, y: 0, z: 0}
+  _acceleration: {x: 0, y: 0, z: -2}
   _drag: 0.1
   _spin: 0
   _speedToSpin: 0
   _spinRandomness: 0
+  _limitRotationAxis: 1
   _noiseAmplitude: 0
   _noiseFrequency: 0.2
   _noiseMotion: 1
@@ -19243,10 +19245,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _template: {fileID: 11400000, guid: d3e68c765e82ef046a10632d261fbe34, type: 2}
   _throttle: 1
-  _lineWidth: 0.03
+  _lineWidth: 0.04
   _lineWidthRandomness: 0.5
   _twist: 2.5
-  _flow: {x: 0, y: 0, z: 0}
+  _flow: {x: 0, y: 0, z: -1}
   _randomSeed: 3
   _attractor: {fileID: 1834274667}
   _attractorPosition: {x: 0, y: 0, z: 0}
@@ -23133,11 +23135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _emitterCenter: {x: 0, y: 1.2, z: 2.5}
-  _emitterSize: {x: 10, y: 1, z: 2}
-  _throttle: 1
+  _emitterCenter: {x: 0, y: 0, z: 0}
+  _emitterSize: {x: 8, y: 8, z: 8}
+  _throttle: 0.9999999
   _life: 4
-  _lifeRandomness: 0.2
+  _lifeRandomness: 0.5
   _initialVelocity: {x: 0, y: 0.1, z: 0}
   _directionSpread: 1
   _speedRandomness: 0.5
@@ -23146,6 +23148,7 @@ MonoBehaviour:
   _spin: 50
   _speedToSpin: 0
   _spinRandomness: 0.6
+  _limitRotationAxis: 0
   _noiseAmplitude: 0
   _noiseFrequency: 0.2
   _noiseMotion: 1
@@ -23573,6 +23576,7 @@ MonoBehaviour:
   _spin: 200
   _speedToSpin: 400
   _spinRandomness: 0.3
+  _limitRotationAxis: 0
   _noiseAmplitude: 0.5
   _noiseFrequency: 0.2
   _noiseMotion: 1
@@ -26468,10 +26472,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1505868501}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 910704747}
   m_RootOrder: 5
@@ -30847,12 +30851,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9f064372f744940958f2640d519945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _emitterCenter: {x: 0, y: 2.5, z: 0}
+  _emitterCenter: {x: 0, y: 0, z: 4}
   _emitterSize: {x: 20, y: 10, z: 20}
-  _throttle: 0.99999994
+  _throttle: 0.9999999
   _life: 4
   _lifeRandomness: 0.6
-  _initialVelocity: {x: 0, y: 0, z: 3}
+  _initialVelocity: {x: 0, y: 0, z: -3}
   _directionSpread: 0.2
   _speedRandomness: 0.5
   _acceleration: {x: 0, y: 0, z: 0}
@@ -30860,6 +30864,7 @@ MonoBehaviour:
   _spin: 80
   _speedToSpin: 200
   _spinRandomness: 0.4
+  _limitRotationAxis: 0
   _noiseAmplitude: 0.4
   _noiseFrequency: 0.2
   _noiseMotion: 0.5
@@ -33255,6 +33260,7 @@ MonoBehaviour:
   _spin: 100
   _speedToSpin: 300
   _spinRandomness: 0.3
+  _limitRotationAxis: 0
   _noiseAmplitude: 0.5
   _noiseFrequency: 0.2
   _noiseMotion: 1
@@ -33362,7 +33368,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1801026157}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -34058,7 +34064,7 @@ MonoBehaviour:
   _rotationFrequency: 0.2
   _positionAmplitude: 1
   _rotationAmplitude: 10
-  _positionScale: {x: 2, y: 1, z: 2}
+  _positionScale: {x: 3, y: 3, z: 3}
   _rotationScale: {x: 1, y: 1, z: 0}
   _positionFractalLevel: 1
   _rotationFractalLevel: 3
@@ -35380,104 +35386,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Klak.Wiring.NodeBase+VoidEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!1 &1913451521
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1913451522}
-  - 23: {fileID: 1913451525}
-  - 114: {fileID: 1913451524}
-  - 33: {fileID: 1913451523}
-  m_Layer: 0
-  m_Name: Tunnel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1913451522
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1913451521}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 649608556}
-  m_RootOrder: 5
---- !u!33 &1913451523
-MeshFilter:
-  m_ObjectHideFlags: 8
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1913451521}
-  m_Mesh: {fileID: 43000014235210704, guid: ef9e8d7c2b43482449175a67095457e4, type: 2}
---- !u!114 &1913451524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1913451521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 184c196670e45e04c91569a75ea7811b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _template: {fileID: 11400000, guid: ef9e8d7c2b43482449175a67095457e4, type: 2}
-  _length: 200
-  _scrollSpeed: 10
-  _noiseDirectivity: 0.8
-  _randomSeed: 0
-  _displaceFrequency: 0.03
-  _displaceAmplitude: 2
-  _displaceSpeed: 0.1
-  _twistFrequency: 0.1
-  _twistAmplitude: 180
-  _twistSpeed: 0.002
-  _tiltFrequency: 0.13
-  _tiltAmplitude: 12
-  _tiltSpeed: 0.05
-  _baseScale: 10
-  _scaleFrequency: 0.1
-  _scaleAmplitude: 0.1
-  _scaleSpeed: 0
-  _kernels: {fileID: 4800000, guid: ae5a7f19a42dbcf4e99ec125cc8d5efa, type: 3}
-  _defaultMaterial: {fileID: 2100000, guid: 667d5a0cce9db1f439bbf223706f8dce, type: 2}
---- !u!23 &1913451525
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1913451521}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 76f47b80713b95648bc52399794395a8, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!1 &1915097889
 GameObject:
   m_ObjectHideFlags: 0
@@ -37139,10 +37047,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _template: {fileID: 11400000, guid: d3e68c765e82ef046a10632d261fbe34, type: 2}
   _throttle: 1
-  _lineWidth: 0.03
+  _lineWidth: 0.04
   _lineWidthRandomness: 0.5
   _twist: 2.5
-  _flow: {x: 0, y: 0, z: 0}
+  _flow: {x: 0, y: 0, z: -1}
   _randomSeed: 0
   _attractor: {fileID: 28179158}
   _attractorPosition: {x: 0, y: 0, z: 0}
@@ -38334,6 +38242,7 @@ MonoBehaviour:
   _spin: 120
   _speedToSpin: 60
   _spinRandomness: 0.3
+  _limitRotationAxis: 0
   _noiseAmplitude: 0.1
   _noiseFrequency: 0.2
   _noiseMotion: 1

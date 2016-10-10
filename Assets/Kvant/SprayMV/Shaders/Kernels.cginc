@@ -1,3 +1,6 @@
+// NOTE:
+// An option that limits the rotation axis was added.
+
 //
 // Kvant/SprayMV - Particle system with motion vectors support
 //
@@ -69,6 +72,12 @@ float4 NewParticleVelocity(float2 uv)
 
 float4 NewParticleRotation(float2 uv)
 {
+#if defined(LIMIT_ROTATION)
+    float r = UVRandom(uv, 7) * UNITY_PI * (_SpinParams.x > 0);
+    float sn, cs;
+    sincos(r, sn, cs);
+    return float4(0, 0, sn, cs);
+#else
     // Uniform random unit quaternion
     // http://www.realtimerendering.com/resources/GraphicsGems/gemsiii/urot.c
     float r = UVRandom(uv, 7);
@@ -77,11 +86,15 @@ float4 NewParticleRotation(float2 uv)
     float t1 = UNITY_PI * 2 * UVRandom(uv, 8);
     float t2 = UNITY_PI * 2 * UVRandom(uv, 9);
     return float4(sin(t1) * r1, cos(t1) * r1, sin(t2) * r2, cos(t2) * r2);
+#endif
 }
 
 // Deterministic random rotation axis
 float3 RotationAxis(float2 uv)
 {
+#if defined(LIMIT_ROTATION)
+    return float3(0, 0, lerp(-1, 1, UVRandom(uv, 10) > 0.5));
+#else
     // Uniformaly distributed points
     // http://mathworld.wolfram.com/SpherePointPicking.html
     float u = UVRandom(uv, 10) * 2 - 1;
@@ -89,6 +102,7 @@ float3 RotationAxis(float2 uv)
     float sn, cs;
     sincos(UVRandom(uv, 11) * UNITY_PI * 2, sn, cs);
     return float3(u2 * cs, u2 * sn, u);
+#endif
 }
 
 // Pass 0: initial position

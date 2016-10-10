@@ -1,3 +1,6 @@
+// NOTE:
+// An option that limits the rotation axis was added.
+
 //
 // Kvant/SprayMV - Particle system with motion vectors support
 //
@@ -151,6 +154,9 @@ namespace Kvant
             get { return _spinRandomness; }
             set { _spinRandomness = value; }
         }
+
+        [SerializeField]
+        bool _limitRotationAxis;
 
         #endregion
 
@@ -323,7 +329,7 @@ namespace Kvant
 
             Graphics.Blit(null, _positionBuffer2, _material, 0);
             Graphics.Blit(null, _velocityBuffer2, _material, 1);
-            Graphics.Blit(null, _rotationBuffer2, _material, 2);
+            Graphics.Blit(null, _rotationBuffer2, _material, _limitRotationAxis ? 6 : 2);
         }
 
         // Update the parameters in the simulation kernels.
@@ -400,7 +406,7 @@ namespace Kvant
             // with the updated position.
             _material.SetTexture("_PositionBuffer", _positionBuffer2);
             Graphics.Blit(null, _velocityBuffer2, _material, 4);
-            Graphics.Blit(null, _rotationBuffer2, _material, 5);
+            Graphics.Blit(null, _rotationBuffer2, _material, _limitRotationAxis ? 7 : 5);
         }
 
         // Update external components: mesh filter.

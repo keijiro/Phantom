@@ -47,6 +47,7 @@ namespace Kvant
         SerializedProperty _spin;
         SerializedProperty _speedToSpin;
         SerializedProperty _spinRandomness;
+        SerializedProperty _limitRotationAxis;
 
         SerializedProperty _noiseAmplitude;
         SerializedProperty _noiseFrequency;
@@ -82,6 +83,7 @@ namespace Kvant
             _spin           = serializedObject.FindProperty("_spin");
             _speedToSpin    = serializedObject.FindProperty("_speedToSpin");
             _spinRandomness = serializedObject.FindProperty("_spinRandomness");
+            _limitRotationAxis = serializedObject.FindProperty("_limitRotationAxis");
 
             _noiseAmplitude = serializedObject.FindProperty("_noiseAmplitude");
             _noiseFrequency = serializedObject.FindProperty("_noiseFrequency");
@@ -145,6 +147,7 @@ namespace Kvant
             EditorGUILayout.PropertyField(_spin);
             EditorGUILayout.PropertyField(_speedToSpin);
             EditorGUILayout.PropertyField(_spinRandomness);
+            EditorGUILayout.PropertyField(_limitRotationAxis);
 
             EditorGUILayout.Space();
 

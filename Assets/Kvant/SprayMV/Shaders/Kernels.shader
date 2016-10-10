@@ -1,3 +1,6 @@
+// NOTE:
+// An option that limits the rotation axis was added.
+
 //
 // Kvant/SprayMV - Particle system with motion vectors support
 //
@@ -80,6 +83,26 @@ Shader "Hidden/Kvant/SprayMV/Kernels"
         Pass
         {
             CGPROGRAM
+            #include "Kernels.cginc"
+            #pragma vertex vert_img
+            #pragma fragment frag_UpdateRotation
+            #pragma target 3.0
+            ENDCG
+        }
+        Pass
+        {
+            CGPROGRAM
+            #define LIMIT_ROTATION
+            #include "Kernels.cginc"
+            #pragma vertex vert_img
+            #pragma fragment frag_InitRotation
+            #pragma target 3.0
+            ENDCG
+        }
+        Pass
+        {
+            CGPROGRAM
+            #define LIMIT_ROTATION
             #include "Kernels.cginc"
             #pragma vertex vert_img
             #pragma fragment frag_UpdateRotation

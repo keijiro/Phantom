@@ -154,7 +154,7 @@ Material:
       second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _Color1
-      second: {r: 0.24117628, g: 0.051470578, b: 1, a: 1}
+      second: {r: 0.051470578, g: 1, b: 0.88225156, a: 1}
     - first:
         name: _Color2
       second: {r: 0.29411757, g: 1, b: 0.3866126, a: 1}
