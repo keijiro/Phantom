@@ -7,12 +7,18 @@ namespace Klak.Wiring
     [CustomEditor(typeof(HueToColor))]
     public class HueToColorEditor : Editor
     {
+        SerializedProperty _hue;
         SerializedProperty _saturation;
         SerializedProperty _brightness;
         SerializedProperty _colorEvent;
 
+        static GUIContent _textHue = new GUIContent("Initial Hue");
+        static GUIContent _textSaturation = new GUIContent("Initial Saturation");
+        static GUIContent _textBrightness = new GUIContent("Initial Brightness");
+
         void OnEnable()
         {
+            _hue = serializedObject.FindProperty("_hue");
             _saturation = serializedObject.FindProperty("_saturation");
             _brightness = serializedObject.FindProperty("_brightness");
             _colorEvent = serializedObject.FindProperty("_colorEvent");
@@ -22,8 +28,9 @@ namespace Klak.Wiring
         {
             serializedObject.Update();
 
-            EditorGUILayout.PropertyField(_saturation);
-            EditorGUILayout.PropertyField(_brightness);
+            EditorGUILayout.PropertyField(_hue, _textHue);
+            EditorGUILayout.PropertyField(_saturation, _textSaturation);
+            EditorGUILayout.PropertyField(_brightness, _textBrightness);
 
             EditorGUILayout.Space();
 

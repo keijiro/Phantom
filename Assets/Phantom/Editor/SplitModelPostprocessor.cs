@@ -3,13 +3,13 @@ using UnityEditor;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Eyeball
+namespace Phantom
 {
-    public class EyeballModelPostprocessor : AssetPostprocessor
+    public class SplitModelPostprocessor : AssetPostprocessor
     {
         void OnPostprocessModel(GameObject go)
         {
-            if (assetPath.IndexOf("Eyeball/Models/Split") >= 0)
+            if (assetPath.IndexOf("Split.fbx") >= 0)
                 foreach (var smr in go.GetComponentsInChildren<MeshFilter>())
                     ProcessModelInplace(smr.sharedMesh);
         }
