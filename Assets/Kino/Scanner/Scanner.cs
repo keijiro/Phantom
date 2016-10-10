@@ -21,17 +21,32 @@ namespace Kino
         [SerializeField] float _interval1 = 1;
         [SerializeField] float _speed1 = 1;
 
+        public Color color1 {
+            get { return _color1; }
+            set { _color1 = value; }
+        }
+
         [Header("Channel 2")]
 
         [SerializeField, ColorUsage(false, true, 0, 8, 0.125f, 3)] Color _color2 = Color.green;
         [SerializeField] float _interval2 = 1;
         [SerializeField] float _speed2 = 1;
 
+        public Color color2 {
+            get { return _color2; }
+            set { _color2 = value; }
+        }
+
         [Header("Channel 3")]
 
         [SerializeField, ColorUsage(false, true, 0, 8, 0.125f, 3)] Color _color3 = Color.blue;
         [SerializeField] float _interval3 = 1;
         [SerializeField] float _speed3 = 1;
+
+        public Color color3 {
+            get { return _color3; }
+            set { _color3 = value; }
+        }
 
         #endregion
 
