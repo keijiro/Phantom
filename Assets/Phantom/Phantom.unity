@@ -12800,7 +12800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wiringNodePosition: {x: 40, y: 337}
-  _floatValue: 1
+  _floatValue: 0
   _interpolator:
     _interpolationType: 2
     _interpolationSpeed: 20
@@ -13259,7 +13259,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  _ditherMode: 1
+  _ditherMode: 2
   shader: {fileID: 4800000, guid: dc9775b65c52747e69fc4c854c00d696, type: 3}
 --- !u!114 &553037312
 MonoBehaviour:
@@ -20014,7 +20014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e5da7555040604f9438130103bdee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringSelected: 1
+  _wiringSelected: 0
 --- !u!1 &798060178
 GameObject:
   m_ObjectHideFlags: 0
@@ -29330,7 +29330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e5da7555040604f9438130103bdee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wiringSelected: 0
+  _wiringSelected: 1
 --- !u!1 &1223940357
 GameObject:
   m_ObjectHideFlags: 0
@@ -34630,7 +34630,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
