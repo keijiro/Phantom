@@ -18,14 +18,32 @@ namespace Phantom
 
         Color _fogColor;
 
+        static Material GetSkyboxMaterial()
+        {
+            var skyboxComponent = Camera.main.GetComponent<Skybox>();
+            if (skyboxComponent != null && skyboxComponent.material != null)
+                return skyboxComponent.material;
+            else
+                return RenderSettings.skybox;
+        }
+
+        static void SetSkyboxMaterial(Material material)
+        {
+            var skyboxComponent = Camera.main.GetComponent<Skybox>();
+            if (skyboxComponent != null)
+                skyboxComponent.material = material;
+            else
+                RenderSettings.skybox = material;
+        }
+
         void Start()
         {
             // Make a clone of a skybox material that is set to the main camera.
-            var skybox = Camera.main.GetComponent<Skybox>();
+            var skybox = GetSkyboxMaterial();
             if (skybox != null) {
-                _cameraSkybox = new Material(skybox.material);
+                _cameraSkybox = new Material(skybox);
                 _cameraSkyboxExposure = _cameraSkybox.GetFloat("_Exposure");
-                skybox.material = _cameraSkybox;
+                SetSkyboxMaterial(_cameraSkybox);
             }
 
             _fogColor = RenderSettings.fogColor;
