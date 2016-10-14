@@ -29,11 +29,8 @@
 sampler2D _MainTex;
 float4 _MainTex_TexelSize;
 
-sampler2D _BlurTex;
-float4 _BlurTex_TexelSize;
-
 // Camera parameters
-float _InvAspect;
+float _RcpAspect;
 float _MaxCoC;
 
 // Fragment shader: Bokeh filter with disk-shaped kernels
@@ -41,32 +38,25 @@ half4 frag_Blur(v2f_img i) : SV_Target
 {
     half4 samp0 = tex2D(_MainTex, i.uv);
 
-    half4 bgAcc = 0;
-    half4 fgAcc = 0;
+    half4 bgAcc = 0; // Background: far field bokeh
+    half4 fgAcc = 0; // Foreground: near field bokeh
 
     for (int si = 0; si < kSampleCount; si++)
     {
         float2 disp = kDiskKernel[si] * _MaxCoC;
         float dist = length(disp);
 
-        float2 duv = float2(disp.x * _InvAspect, disp.y);
+        float2 duv = float2(disp.x * _RcpAspect, disp.y);
         half4 samp = tex2D(_MainTex, i.uv + duv);
 
-        // BG: Compare CoC of the current sample and the center sample.
-        // Select smaller one.
+        // BG: Compare CoC of the current sample and the center sample
+        // and select smaller one.
         half bgCoC = max(min(samp0.a, samp.a), 0);
 
-        // BG: Compare the CoC to the sample distance.
+        // Compare the CoC to the sample distance.
         // Add a small margin to smooth out.
-        half bgWeight = saturate((bgCoC - dist + 0.005) / 0.01);
-
-        // FG: Calculate the area of CoC and normalize it.
-        half fgWeight = -samp.a * max(-samp.a, 0) * UNITY_PI;
-        fgWeight /= _MaxCoC * _MaxCoC * kSampleCount;
-
-        // FG: Compare the CoC to the sample distance.
-        // Add a small margin to smooth out.
-        fgWeight *= saturate((-samp.a - dist + 0.005) / 0.01);
+        half bgWeight = saturate((bgCoC   - dist + 0.005) / 0.01);
+        half fgWeight = saturate((-samp.a - dist + 0.005) / 0.01);
 
         // Accumulation
         bgAcc += half4(samp.rgb, 1) * bgWeight;
@@ -77,9 +67,12 @@ half4 frag_Blur(v2f_img i) : SV_Target
     bgAcc.rgb /= bgAcc.a + (bgAcc.a == 0); // zero-div guard
     fgAcc.rgb /= fgAcc.a + (fgAcc.a == 0);
 
-    // Distance based alpha
-    half distAlpha = samp0.a * abs(samp0.a) / (3 * _MaxCoC * _MaxCoC * _MaxCoC);
-    bgAcc.a = saturate(distAlpha);                // BG: Always apply distAlpha
+    // BG: Calculate the alpha value only based on the center CoC.
+    // This is a rather aggressive approximation but provides stable results.
+    bgAcc.a = smoothstep(_MainTex_TexelSize.y, _MainTex_TexelSize.y * 2, samp0.a);
+
+    // FG: Normalize the total of the weights.
+    fgAcc.a *= UNITY_PI / kSampleCount;
 
     // Alpha premultiplying
     half3 rgb = 0;
@@ -90,13 +83,4 @@ half4 frag_Blur(v2f_img i) : SV_Target
     half alpha = (1 - saturate(bgAcc.a)) * (1 - saturate(fgAcc.a));
 
     return half4(rgb, alpha);
-}
-
-// Fragment shader: Final composition
-half4 frag_Composite(v2f_img i) : SV_Target
-{
-    half4 cs = tex2D(_MainTex, i.uv);
-    half4 cb = tex2D(_BlurTex, i.uv);
-    half3 rgb = cs * cb.a + cb.rgb;
-    return half4(rgb, cs.a);
 }

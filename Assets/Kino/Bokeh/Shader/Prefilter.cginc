@@ -31,47 +31,58 @@ float4 _MainTex_TexelSize;
 sampler2D_float _CameraDepthTexture;
 
 // Camera parameters
-half _Distance;
-half _LensCoeff;  // f^2 / (N * (S1 - f) * film_width * 2)
+float _Distance;
+float _LensCoeff;  // f^2 / (N * (S1 - f) * film_width * 2)
 half _MaxCoC;
+half _RcpMaxCoC;
 
-// CoC radius calculation
-float CalculateCoC(float2 uv)
-{
-    // Calculate the radius of CoC.
-    // https://en.wikipedia.org/wiki/Circle_of_confusion
-    float d = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv));
-    float coc = (d - _Distance) * _LensCoeff / d;
-    return clamp(coc, -_MaxCoC, _MaxCoC);
-}
+// Max between three components
+half max3(half3 xyz) { return max(xyz.x, max(xyz.y, xyz.z)); }
 
-// Fragment shader: CoC calculation
-half4 frag_CoC(v2f_img i) : SV_Target
-{
-    half3 acc = tex2D(_MainTex, i.uv).rgb;
-    return half4(acc, CalculateCoC(i.uv));
-}
-
-// Fragment shader: Prefiltering
+// Fragment shader: Downsampling, prefiltering and CoC calculation
 half4 frag_Prefilter(v2f_img i) : SV_Target
 {
-    float4 duv = _MainTex_TexelSize.xyxy * float4(1, 1, -1, 0);
+    // Sampling positions of neighbor four pixels
+    float2 uv0 = i.uv + _MainTex_TexelSize.xy * float2(-0.5, -0.5);
+    float2 uv1 = i.uv + _MainTex_TexelSize.xy * float2(+0.5, -0.5);
+    float2 uv2 = i.uv + _MainTex_TexelSize.xy * float2(-0.5, +0.5);
+    float2 uv3 = i.uv + _MainTex_TexelSize.xy * float2(+0.5, +0.5);
 
-    half4 c0 = tex2D(_MainTex, i.uv);
+    // Sample source colors.
+    half3 c0 = tex2D(_MainTex, uv0).rgb;
+    half3 c1 = tex2D(_MainTex, uv1).rgb;
+    half3 c2 = tex2D(_MainTex, uv2).rgb;
+    half3 c3 = tex2D(_MainTex, uv3).rgb;
 
-    half3 acc;
+    // Sample linear depths.
+    float d0 = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv0));
+    float d1 = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv1));
+    float d2 = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv2));
+    float d3 = LinearEyeDepth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, uv3));
+    float4 depths = float4(d0, d1, d2, d3);
 
-    acc  = tex2D(_MainTex, i.uv - duv.xy).rgb;
-    acc += tex2D(_MainTex, i.uv - duv.wy).rgb * 2;
-    acc += tex2D(_MainTex, i.uv - duv.zy).rgb;
+    // Calculate the radiuses of CoCs at these sample points.
+    half4 cocs = (depths - _Distance) * _LensCoeff / depths;
+    cocs = clamp(cocs, -_MaxCoC, _MaxCoC);
 
-    acc += tex2D(_MainTex, i.uv - duv.xw).rgb * 2;
-    acc += c0                            .rgb * 4;
-    acc += tex2D(_MainTex, i.uv + duv.xw).rgb * 2;
+    // Premultiply CoC to reduce background bleeding.
+    half4 weights = saturate(abs(cocs) * _RcpMaxCoC);
 
-    acc += tex2D(_MainTex, i.uv + duv.zy).rgb;
-    acc += tex2D(_MainTex, i.uv + duv.wy).rgb * 2;
-    acc += tex2D(_MainTex, i.uv + duv.xy).rgb;
+#if defined(PREFILTER_LUMA_WEIGHT)
+    // Apply luma weights to reduce flickering.
+    // Inspired by goo.gl/j1fhLe goo.gl/mfuZ4h
+    weights.x *= 1 / (max3(c0) + 1);
+    weights.y *= 1 / (max3(c1) + 1);
+    weights.z *= 1 / (max3(c2) + 1);
+    weights.w *= 1 / (max3(c3) + 1);
+#endif
 
-    return half4(acc / 16, c0.a);
+    // Weighted average of the color samples
+    half3 avg = c0 * weights.x + c1 * weights.y + c2 * weights.z + c3 * weights.w;
+    avg /= dot(weights, 1);
+
+    // Output CoC = average of CoCs
+    half coc = dot(cocs, 0.25);
+
+    return half4(avg, coc);
 }

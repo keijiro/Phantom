@@ -125,11 +125,11 @@ namespace Kino
         {
             // Estimate the allowable maximum radius of CoC from the sample
             // count level (the equation below was empirically derived).
-            var radiusInPixels = (float)_sampleCount * 4 + 10;
+            var radiusInPixels = (float)_sampleCount * 4.5f + 12;
 
-            // Applying a 10% limit to the CoC radius to keep the size of
+            // Applying a 5% limit to the CoC radius to keep the size of
             // TileMax/NeighborMax small enough.
-            return Mathf.Min(0.1f, radiusInPixels / screenHeight);
+            return Mathf.Min(0.05f, radiusInPixels / screenHeight);
         }
 
         void SetUpShaderParameters(RenderTexture source)
@@ -141,10 +141,12 @@ namespace Kino
             var coeff = f * f / (_fNumber * (s1 - f) * kFilmHeight * 2);
             _material.SetFloat("_LensCoeff", coeff);
 
-            _material.SetFloat("_MaxCoC", CalculateMaxCoCRadius(source.height));
+            var maxCoC = CalculateMaxCoCRadius(source.height);
+            _material.SetFloat("_MaxCoC", maxCoC);
+            _material.SetFloat("_RcpMaxCoC", 1 / maxCoC);
 
-            var invAspect = (float)source.height / source.width;
-            _material.SetFloat("_InvAspect", invAspect);
+            var rcpAspect = (float)source.height / source.width;
+            _material.SetFloat("_RcpAspect", rcpAspect);
         }
 
         #endregion
@@ -182,33 +184,25 @@ namespace Kino
 
             SetUpShaderParameters(source);
 
-            // Pass #1 and #2 can be combined, but are separated to increase
-            // the texture cache hits. In some configurations (e.g. PS4 with
-            // HDR rendering), this makes a significant performance gain.
-
-            // Pass #1 - Downsampling and CoC calculation
+            // Pass #1 - Downsampling, prefiltering and CoC calculation
             var rt1 = RenderTexture.GetTemporary(width / 2, height / 2, 0, format);
-            source.filterMode = FilterMode.Bilinear;
             Graphics.Blit(source, rt1, _material, 0);
 
-            // Pass #2 - Prefiltering
+            // Pass #2 - Bokeh simulation
             var rt2 = RenderTexture.GetTemporary(width / 2, height / 2, 0, format);
             rt1.filterMode = FilterMode.Bilinear;
-            Graphics.Blit(rt1, rt2, _material, 1);
+            Graphics.Blit(rt1, rt2, _material, 1 + (int)_sampleCount);
 
-            // Pass #3 - Bokeh simulation
+            // Pass #3 - Upsampling and composition
+            _material.SetTexture("_BlurTex", rt2);
             rt2.filterMode = FilterMode.Bilinear;
-            Graphics.Blit(rt2, rt1, _material, 2 + (int)_sampleCount);
-
-            // Pass #4 - Composition
-            _material.SetTexture("_BlurTex", rt1);
-            Graphics.Blit(source, destination, _material, 6);
+            Graphics.Blit(source, destination, _material, 5);
 
             #if UNITY_EDITOR
 
             // Focus range visualization
             if (_visualize)
-                Graphics.Blit(rt2, destination, _material, 7);
+                Graphics.Blit(rt1, destination, _material, 6);
 
             #endif
 
