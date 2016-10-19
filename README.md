@@ -1,7 +1,7 @@
 Phantom
 =======
 
-*Phantom* is a Unity project that was made for live visuals for [Phantom Sketch Mod.][PSM] held in Sapporo on 15th Oct. 2016.
+*Phantom* is a Unity project that was made for live visuals for [Phantom Sketch Mod.][PSM] held in Sapporo on 15th Oct. 2016. Some photos and videos from the event are available [here][Album].
 
 ![screenshot](http://66.media.tumblr.com/30e0037ada2dd6d07ad6d25dfd220895/tumblr_of1bbsGMIj1qio469o3_320.png)
 ![gif](http://67.media.tumblr.com/cc33e37b3a67afdb543914a271a42e44/tumblr_oeu4kzqGEg1qio469o2_320.gif)
@@ -20,4 +20,5 @@ License
 I don't declare any copyright on visuals made with *Phantom*. I mean, you can use it for VJing freely :smiley:
 
 [PSM]: https://no-maps.jp/event/2016_int_psm
+[Album]: http://radiumsoftware.tumblr.com/tagged/phantom
 [MultiDisplay]: https://docs.unity3d.com/Manual/MultiDisplay.html
